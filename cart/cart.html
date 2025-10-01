@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl; /* دعم الاتجاه من اليمين لليسار */
+            text-align: right;
+        }
+        header {
+            background: #2563eb;
+            color: #fff;
+            padding: 24px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+        section {
+            margin-bottom: 32px;
+        }
+        h2 {
+            color: #2563eb;
+            margin-bottom: 16px;
+        }
+        #cart-list {
+            list-style: none;
+            padding: 0;
+        }
+        #cart-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        #cart-list li:last-child {
+            border-bottom: none;
+        }
+        .cart-item {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #cart-summary {
+            background: #f1f5f9;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+        #total-price {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+        #checkout-button {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+        }
+        #checkout-button:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="file:///C:/Users/Mohamed%20Faisal/Desktop/ne%20w/nhcj/online-store/src/index.html">الرئيسية</a></li>
+                <li><a href="file:///C:/Users/Mohamed%20Faisal/Desktop/ne%20w/nhcj/online-store/src/category/electronics.html">Electronics</a></li>
+                <li><a href="file:///C:/Users/Mohamed%20Faisal/Desktop/ne%20w/nhcj/online-store/src/category/clothing.html">Clothing</a></li>
+                <li><a href="file:///C:/Users/Mohamed%20Faisal/Desktop/ne%20w/nhcj/online-store/src/category/health.html">Health</a></li>
+                <li><a href="file:///C:/Users/Mohamed%20Faisal/Desktop/ne%20w/nhcj/online-store/src/category/beauty.html">Beauty</a></li>
+                <li><a href="../cart/cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <h1>🛒 سلة التسوق الخاصة بك</h1>
+    </header>
+    <main>
+        <section id="cart-items">
+            <h2>العناصر في السلة</h2>
+            <ul id="cart-list">
+                </ul>
+        </section>
+        <section id="cart-summary">
+            <div id="total-price">الإجمالي: $0.00</div>
+            <button id="checkout-button">المتابعة إلى الدفع</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 متجر على الإنترنت. جميع الحقوق محفوظة.</p>
+    </footer>
+    <script src="../js/cart.js"></script>
+</body>
+</html>

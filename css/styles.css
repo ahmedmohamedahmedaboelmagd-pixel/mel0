@@ -28,14 +28,16 @@
     background: #e0e7ff;
     color: #2563eb;
 }
-/* This file contains the CSS styles for the entire project, including layout, typography, and responsive design. */
 
+/* الأنماط العامة (شاشات الكمبيوتر) */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
     min-height: 100vh;
+    direction: rtl; 
+    text-align: right;
 }
 
 header {
@@ -75,7 +77,7 @@ nav a:hover {
     background: #1e40af;
 }
 
-.container, main {
+.container, main, .policy-main {
     max-width: 900px;
     margin: 40px auto;
     background: #fff;
@@ -84,6 +86,39 @@ nav a:hover {
     padding: 40px 32px;
 }
 
+/* أنماط صفحة الإدارة (Admin) */
+.admin-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 28px;
+}
+.admin-container h1 {
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 32px;
+}
+.admin-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-weight: 500;
+}
+.admin-container input, 
+.admin-container select, 
+.admin-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+/* شبكة عرض المنتجات */
 .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -180,6 +215,85 @@ nav a:hover {
     box-shadow: 0 1px 4px rgba(37,99,235,0.04);
 }
 
+/* أنماط صفحة السياسة */
+.policy-main {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px;
+}
+.policy-main h1 {
+    color: #2563eb;
+    margin-bottom: 24px;
+    text-align: center;
+}
+.policy-main ul {
+    margin: 20px 0;
+    padding-right: 20px;
+}
+.policy-main li {
+    margin-bottom: 14px;
+    color: #334155;
+}
+.policy-main .note {
+    background: #f1f5f9;
+    padding: 16px;
+    border-radius: 8px;
+    color: #dc2626;
+    margin-top: 24px;
+}
+/* أنماط صفحة الأقسام الجانبية */
+.container.with-sidebar {
+    display: flex;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 0;
+}
+.sidebar {
+    width: 220px;
+    background: #f1f5f9;
+    padding: 32px 0;
+    border-left: 1px solid #e2e8f0;
+}
+.sidebar h2 {
+    color: #2563eb;
+    font-size: 1.2em;
+    margin-bottom: 18px;
+    padding: 0 20px;
+    text-align: center;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar li {
+    margin-bottom: 2px;
+}
+.sidebar li a {
+    display: block;
+    padding: 12px 20px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 1.05em;
+    transition: background 0.2s, color 0.2s;
+}
+.sidebar li a:hover {
+    background: #e0e7ff;
+    color: #2563eb;
+}
+.main-content {
+    flex-grow: 1;
+    padding: 32px;
+}
+
+/* Footer Styles */
 footer, .footer {
     text-align: center;
     padding: 18px 0;
@@ -194,20 +308,127 @@ footer, .footer {
     width: 100%;
 }
 
-@media (max-width: 768px) {
+/* ------------------------------------------- */
+/* أنماط التجاوب (Responsive Media Queries)      */
+/* ------------------------------------------- */
+
+/* شاشات الحاسوب اللوحي (Tablet - أقل من 1024 بكسل) */
+@media (max-width: 1024px) {
     .product-list {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+        gap: 20px;
     }
-    .container, main {
-        padding: 24px 10px;
+    .container, main, .policy-main {
+        max-width: 95%; 
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+    
+    .product-detail img {
+        max-width: 180px; 
+        height: 180px;
+    }
+
+    /* جعل الحاوية الجانبية (الأقسام) تتكدس */
+    .container.with-sidebar {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 20px 0;
+        border-left: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .sidebar h2 {
+        padding: 0 10px;
+        text-align: right; /* تعديل ليتناسب مع التكدس */
+    }
+    .sidebar ul {
+        display: flex; /* لعرض الروابط أفقياً */
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 10px;
+        justify-content: center;
+    }
+    .sidebar li {
+        width: auto;
+        margin-bottom: 0;
+    }
+    .sidebar li a {
+        padding: 8px 15px;
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+        text-align: right;
     }
 }
 
+/* الهواتف الذكية (Mobile - أقل من 768 بكسل) */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 0 10px 0;
+    }
+    nav ul {
+        flex-direction: column; 
+        gap: 8px;
+        align-items: center;
+        margin: 10px 0 10px 0;
+    }
+    nav a {
+        display: block;
+        padding: 8px 15px;
+        width: 80%; 
+        text-align: center;
+    }
+    
+    .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    
+    .product-detail {
+        padding: 20px 10px;
+    }
+    
+    .product-item {
+        padding: 15px 10px;
+    }
+    
+    .admin-container { 
+        max-width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
+
+/* الهواتف الصغيرة جداً (Tiny Mobile - أقل من 480 بكسل) */
 @media (max-width: 480px) {
     .product-list {
         grid-template-columns: 1fr;
     }
-    .container, main {
-        padding: 12px 2px;
+    .container, main, .policy-main {
+        padding: 15px 10px;
+        margin: 15px auto;
+    }
+    
+    .admin-container { 
+        padding: 15px;
+        margin: 10px auto;
+    }
+    
+    .product-item img {
+        width: 100px;
+        height: 100px;
+    }
+    /* في وضع الشاشة الواحدة، نجعل القائمة الجانبية عمودية أيضًا */
+    .container.with-sidebar .sidebar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container.with-sidebar .sidebar li a {
+        width: 90%;
+        text-align: center;
     }
 }

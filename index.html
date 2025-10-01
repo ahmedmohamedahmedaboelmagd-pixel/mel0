@@ -1,214 +1,75 @@
 <!DOCTYPE html>
-<html lang="ar"> <head>
+<html lang="ar"> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Store</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* ... (Your original CSS styles remain here) ... */
-        body {
-            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            direction: rtl;
-        }
-        header {
-            background: #2563eb;
-            color: #fff;
-            padding: 32px 0 16px 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 16px 0;
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1em;
-            padding: 8px 18px;
-            border-radius: 6px;
-            transition: background 0.2s;
-        }
-        nav ul li a:hover {
-            background: #1e40af;
-        }
-        main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            text-align: right;
-        }
-        h2 {
-            color: #2563eb;
-            margin-bottom: 24px;
-        }
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-        .product-item {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            width: 300px;
-            text-align: center;
-        }
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        .product-item h3 {
-            color: #2563eb;
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
-        .product-item p {
-            color: #475569;
-            margin-bottom: 15px;
-        }
-        .product-item a {
-            background: #2563eb;
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            display: inline-block;
-            transition: background 0.2s;
-        }
-        .product-item a:hover {
-            background: #1e40af;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <header>
+        <h1>متجر على الإنترنت</h1>
         <nav>
             <ul>
-                <li class="all-dropdown" style="position:relative;">
-                    <a href="#" id="allMenuBtn" style="position:relative;"> الكل <span style="font-size:1.1em;">☰</span></a>
-                    <ul class="dropdown-content" style="display:none; position:absolute; top:100%; right:0; background:#fff; min-width:180px; box-shadow:0 2px 12px rgba(0,0,0,0.12); border-radius:8px; padding:0; margin:0; z-index:1000; flex-direction:column;">
-                        <li><a href="category/electronics.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">الإلكترونيات</a></li>
-                        <li><a href="category/clothing.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">الملابس</a></li>
-                        <li><a href="category/health.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">الصحة</a></li>
-                        <li><a href="category/beauty.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">الجمال</a></li>
-                        <li><a href="category/home.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">المنزل</a></li>
-                        <li><a href="category/sports.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">الرياضة</a></li>
-                        <li><a href="category/books.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">الكتب</a></li>
-                        <li><a href="category/toys.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">الألعاب</a></li>
-                        <li><a href="category/grocery.html" style="display:block; padding:14px 18px; color:#0f172a; font-size:1.08em;">البقالة</a></li>
-                    </ul>
-                </li>
-    <!-- صفحة جانبية للأقسام -->
-    <div id="allSidebar" style="display:none; position:fixed; top:0; right:0; height:100vh; width:320px; background:#fff; box-shadow:-4px 0 24px rgba(0,0,0,0.12); z-index:9999; border-radius:16px 0 0 16px; padding:32px 0 0 0;">
-        <h3 style="color:#2563eb; text-align:center; margin-bottom:24px;">جميع الأقسام</h3>
-        <ul style="list-style:none; padding:0 32px;">
-            <li><a href="category/electronics.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">الإلكترونيات</a></li>
-            <li><a href="category/clothing.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">الملابس</a></li>
-            <li><a href="category/health.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">الصحة</a></li>
-            <li><a href="category/beauty.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">الجمال</a></li>
-            <li><a href="category/home.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">المنزل</a></li>
-            <li><a href="category/sports.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">الرياضة</a></li>
-            <li><a href="category/books.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">الكتب</a></li>
-            <li><a href="category/toys.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">الألعاب</a></li>
-            <li><a href="category/grocery.html" style="display:block; padding:14px 0; color:#0f172a; font-size:1.08em;">البقالة</a></li>
-        </ul>
-        <button id="closeSidebar" style="position:absolute; top:18px; left:18px; background:#2563eb; color:#fff; border:none; border-radius:50%; width:36px; height:36px; font-size:1.3em; cursor:pointer;">×</button>
-    </div>
-    <script>
-    // إظهار القائمة المنسدلة تحت زر "الكل"
-    document.addEventListener('DOMContentLoaded', function() {
-        var allMenuBtn = document.getElementById('allMenuBtn');
-        var dropdown = document.querySelector('.dropdown-content');
-        var allDropdown = document.querySelector('.all-dropdown');
-        allMenuBtn.addEventListener('mouseenter', function() {
-            dropdown.style.display = 'flex';
-        });
-        allDropdown.addEventListener('mouseleave', function() {
-            dropdown.style.display = 'none';
-        });
-        allMenuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            dropdown.style.display = (dropdown.style.display === 'flex') ? 'none' : 'flex';
-        });
-    });
-    </script>
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="category/electronics.html">الإلكترونيات</a></li>
                 <li><a href="category/clothing.html">الملابس</a></li>
                 <li><a href="category/health.html">الصحة</a></li>
                 <li><a href="category/beauty.html">الجمال</a></li>
-                <li><a href="cart/cart.html">سلة التسوق</a></li>
-                <li><a href="file:///C:/Users/Mohamed%20Faisal/Desktop/ne%20w/nhcj/online-store/src/category/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B1%D8%AC%D8%A7%D8%B9%20.html">سياسة الاستبدال والاسترجاع</a></li>
+                <li><a href="cart/cart.html">السلة</a></li>
+                <li><a href="pages/New Text Document.html">الأقسام</a></li>
             </ul>
-    <script>
-    // إظهار قائمة الكل عند الوقوف بالماوس
-    document.addEventListener('DOMContentLoaded', function() {
-        var allDropdown = document.querySelector('.all-dropdown');
-        var allContent = allDropdown.querySelector('.all-dropdown-content');
-        allDropdown.addEventListener('mouseenter', function() {
-            allContent.style.display = 'block';
-        });
-        allDropdown.addEventListener('mouseleave', function() {
-            allContent.style.display = 'none';
-        });
-    });
-    </script>
         </nav>
-        <h1>مرحباً بك في متجرنا الإلكتروني</h1>
     </header>
-    <main>
+    <main class="container">
         <section>
-            <h2>منتجات مميزة</h2>
+            <h2>المنتجات المميزة</h2>
             <div class="product-list">
                 <div class="product-item">
                     <h3>Product 1</h3>
                     <p>Description of Product 1</p>
-                    <a href="product/detail.html?id=p1">View Details</a> </div>
+                    <a href="product/detail.html?id=p1">View Details</a>
+                </div>
                 <div class="product-item">
                     <h3>Product 2</h3>
                     <p>Description of Product 2</p>
-                    <a href="product/detail.html?id=p2">View Details</a> </div>
+                    <a href="product/detail.html?id=p2">View Details</a>
+                </div>
                 <div class="product-item">
                     <h3>Product 3</h3>
                     <p>Description of Product 3</p>
-                    <a href="product/detail.html?id=p3">View Details</a> </div>
-                    <div class="product-item">
+                    <a href="product/detail.html?id=p3">View Details</a>
+                </div>
+                <div class="product-item">
                     <h3>Product 3</h3>
                     <p>Description of Product 3</p>
-                    <a href="product/detail.html?id=p3">View Details</a> </div>
-            <div class="product-item">
+                    <a href="product/detail.html?id=p3">View Details</a>
+                </div>
+                <div class="product-item">
                     <h3>Product 3</h3>
                     <p>Description of Product 3</p>
-                    <a href="product/detail.html?id=p3">View Details</a> </div>
-                    <div class="product-item">
+                    <a href="product/detail.html?id=p3">View Details</a>
+                </div>
+                <div class="product-item">
                     <h3>Product 3</h3>
                     <p>Description of Product 3</p>
-                    <a href="product/detail.html?id=p3">View Details</a> </div>
-                    <div class="product-item">
+                    <a href="product/detail.html?id=p3">View Details</a>
+                </div>
+                <div class="product-item">
                     <h3>Product 3</h3>
                     <p>Description of Product 3</p>
-                    <a href="product/detail.html?id=p3">View Details</a> </div>
-                    <div class="product-item">
+                    <a href="product/detail.html?id=p3">View Details</a>
+                </div>
+                <div class="product-item">
                     <h3>Product 3</h3>
                     <p>Description of Product 3</p>
-                    <a href="product/detail.html?id=p3">View Details</a> </div>
-                    <div class="product-item">
+                    <a href="product/detail.html?id=p3">View Details</a>
+                </div>
+                <div class="product-item">
                     <h3>Product 3</h3>
                     <p>Description of Product 3</p>
-                    <a href="product/detail.html?id=p3">View Details</a> </div>
+                    <a href="product/detail.html?id=p3">View Details</a>
+                </div>
             </div>
             
         </section>
